@@ -1,8 +1,7 @@
-
 //import './App.css';
 import { ChakraProvider, extendTheme, SliderFilledTrack } from '@chakra-ui/react';
 import "./styles/reset.css"
-import {NavBar} from "./components/NavBar"
+import NavBar from "./components/NavBar"
 
 const theme = extendTheme({
   fonts: {
