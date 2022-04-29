@@ -3,13 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faGamepad, faComputerMouse, faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { faPlaystation, faXbox } from '@fortawesome/free-brands-svg-icons'
 import "../styles/nav.css"
+import CartWidget from './CartWidget'
 
 const NavBar = () => {
     return(
         <header>
             <nav>
                 {/* <h2 className="nav__logo">ECOMMERCE</h2> */}
-                <Heading textAlign={"center"} letterSpacing={"0.3rem"} fontWeight={"700"} as={"h2"} size={"lg"} color={"teal"}>goat.codes</Heading>
+                <Heading textAlign={"center"} letterSpacing={"0.3rem"} fontWeight={"700"} size={"lg"} color={"teal"}>goat.codes</Heading>
                 <Box display={"flex"} flexDir={"column"} w={"40%"}>
                     <InputGroup>
                         <InputLeftElement 
@@ -33,10 +34,7 @@ const NavBar = () => {
 
                 </Box>
 
-                <Box display={"flex"} flexDir={"column"} alignItems={"center"}>
-                    <Button leftIcon={<FontAwesomeIcon icon={faCartShopping}/>} colorScheme="teal" variant={"solid"}>CART</Button>
-                    <Badge colorScheme={"blue"} textAlign={"center"} mt={"0.2rem"} width={"-webkit-fit-content"}>0 items</Badge>
-                </Box>
+                <CartWidget></CartWidget>
                 
             </nav>
         </header>

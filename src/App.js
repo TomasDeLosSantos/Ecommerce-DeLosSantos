@@ -2,6 +2,7 @@
 import { ChakraProvider, extendTheme, SliderFilledTrack } from '@chakra-ui/react';
 import "./styles/reset.css"
 import NavBar from "./components/NavBar"
+import ItemListContainer from './components/ItemListContainer';
 
 const theme = extendTheme({
   fonts: {
@@ -15,6 +16,7 @@ function App() {
     <ChakraProvider theme={theme}>
       <div className="App">
         <NavBar/>
+        <ItemListContainer greeting="Welcome."/>
       </div>
     </ChakraProvider>
   );
