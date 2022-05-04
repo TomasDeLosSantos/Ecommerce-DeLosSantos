@@ -1,6 +1,7 @@
 import { Heading, Button, ButtonGroup, Input, InputGroup, InputLeftElement, Badge, Box } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faGamepad, faComputerMouse, faCartShopping } from '@fortawesome/free-solid-svg-icons'
+
 const CartWidget = () => {
     return(
         <Box display={"flex"} flexDir={"column"} alignItems={"center"}>

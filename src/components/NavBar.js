@@ -9,7 +9,6 @@ const NavBar = () => {
     return(
         <header>
             <nav>
-                {/* <h2 className="nav__logo">ECOMMERCE</h2> */}
                 <Heading textAlign={"center"} letterSpacing={"0.3rem"} fontWeight={"700"} size={"lg"} color={"teal"}>goat.codes</Heading>
                 <Box display={"flex"} flexDir={"column"} w={"40%"}>
                     <InputGroup>
