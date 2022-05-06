@@ -1,6 +1,7 @@
 //import './App.css';
 import { ChakraProvider, extendTheme, SliderFilledTrack } from '@chakra-ui/react';
 import "./styles/reset.css"
+import "./styles/style.css"
 import NavBar from "./components/NavBar"
 import ItemListContainer from './components/ItemListContainer';
 

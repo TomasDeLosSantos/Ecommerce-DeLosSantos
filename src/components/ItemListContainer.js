@@ -1,5 +1,6 @@
 import { Heading, Button, ButtonGroup, Input, InputGroup, InputLeftElement, Badge, Box } from '@chakra-ui/react'
 import ItemCount from './ItemCount';
+import ItemList from './ItemList';
 
 const ItemListContainer = ({greeting}) =>{
     const onAdd = (quant, title) => {
@@ -15,6 +16,8 @@ const ItemListContainer = ({greeting}) =>{
                 <ItemCount title="Halo" stock={20} initial={10} onAdd={onAdd}></ItemCount>
                 <ItemCount title="Mass Effect" stock={0} initial={0} onAdd={onAdd}></ItemCount>
             </Box>
+            
+            <ItemList></ItemList>
         </Box>
     );
 }
