@@ -1,0 +1,8 @@
+[
+    {"id": 1, "title": "Elden Ring", "price": 7000, "pictureUrl": "../assets/TheWitcher3.jpg"}, 
+    {"id": 2, "title": "TheWitcher3", "price": 2200, "pictureUrl": "../assets/TheWitcher3.jpg"}, 
+    {"id": 3, "title": "The Witcher 3", "price": 800, "pictureUrl": "../assets/TheWitcher3.jpg"},
+    {"id": 4, "title": "TheWitcher3", "price": 2200, "pictureUrl": "../assets/TheWitcher3.jpg"}, 
+    {"id": 5, "title": "The Witcher 3", "price": 800, "pictureUrl": "../assets/TheWitcher3.jpg"},
+    {"id": 6, "title": "Elden Ring", "price": 7000, "pictureUrl": "../assets/TheWitcher3.jpg"}
+]

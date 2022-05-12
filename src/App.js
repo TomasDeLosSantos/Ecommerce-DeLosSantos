@@ -4,6 +4,7 @@ import "./styles/reset.css"
 import "./styles/style.css"
 import NavBar from "./components/NavBar"
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 const theme = extendTheme({
   fonts: {
@@ -18,6 +19,7 @@ function App() {
       <div className="App">
         <NavBar/>
         <ItemListContainer greeting="Welcome."/>
+        <ItemDetailContainer/>
       </div>
     </ChakraProvider>
   );
