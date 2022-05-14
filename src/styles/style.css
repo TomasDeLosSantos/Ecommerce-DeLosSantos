@@ -1,3 +1,9 @@
 .img{
     border-radius: 15px;
+    transition: all 0.2s;
+}
+
+.img.hover:hover{
+    transform: scale(1.05);
+    cursor: pointer;
 }

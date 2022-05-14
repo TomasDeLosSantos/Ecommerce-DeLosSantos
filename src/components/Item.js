@@ -14,9 +14,11 @@ const Item = ({id, title, price, pictureUrl}) => {
                 borderRadius={"10px"} 
                 padding={"0.5rem"}
                 margin={"1rem"}
-                width={"30%"}>
+                width={"30%"}
+                minWidth={"300px"}
+                position={"relative"}>
                     
-            <img className='img' src={pictureUrl}/>
+            <img className='img hover' src={pictureUrl}/>
 
             <Box display={"flex"} alignContent={"center"} justifyContent={"space-between"} mt={"0.5rem"} mb={"0.5rem"}>
 
@@ -31,7 +33,7 @@ const Item = ({id, title, price, pictureUrl}) => {
 
 
             </Box>
-            <Button variant={"solid"} colorScheme={"teal"} width={"100%"}>Details</Button>
+            {/* <Button variant={"solid"} colorScheme={"teal"} width={"100%"}>Details</Button> */}
         </Box>
     );
 }

@@ -19,7 +19,7 @@ const ItemDetail = ({item = []}) => {
 
                 <Heading size={"lg"} color={"teal"} textAlign={"center"} mb={"0.5rem"}>
                     {item.title + "  "}
-                    <Badge size={"md"} colorScheme={"blue"} width={"-webkit-fit-content"} margin={"auto"}>ID: {item.id}</Badge>
+                    {/* <Badge size={"md"} colorScheme={"blue"} width={"-webkit-fit-content"} margin={"auto"}>ID: {item.id}</Badge> */}
                 </Heading>
 
                 <Text fontSize={"lg"} textAlign={"center"}>
@@ -27,12 +27,10 @@ const ItemDetail = ({item = []}) => {
                 </Text>
 
 
-                <Heading textAlign={"center"} size={"lg"} color={"teal"}>
-                    {"$" + item.price}
-                </Heading>
+                
 
 
-                <ItemCount title={""} stock={15} initial={0}></ItemCount>
+                <ItemCount title={""} stock={15} initial={0} price={item.price}></ItemCount>
             {/* <Box display={"flex"} alignContent={"center"} justifyContent={"space-between"} mt={"0.5rem"} mb={"0.5rem"}>
 
 
