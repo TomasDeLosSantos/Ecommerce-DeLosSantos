@@ -3,28 +3,25 @@ import { useEffect, useState } from "react";
 import Item from "./Item";
 // const items = [{id: 1, title: "titulo", price: 0, pictureUrl: "url"}, {id: 2, title: "titulo", price: 0, pictureUrl: "url"}, {id: 3, title: "titulo", price: 0, pictureUrl: "url"}];
 
-const ItemList = () => {
+const ItemList = ({category}) => {
 
     const [items, setItems] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             return new Promise(() => setTimeout(() => {
-                    const data = [
-                        {id: 1, title: "Elden Ring", price: 7000, pictureUrl: require("../assets/EldenRing.jpg")}, 
-                        {id: 2, title: "Minecraft", price: 2200, pictureUrl: require("../assets/Minecraft.jpg")}, 
-                        {id: 3, title: "The Witcher 3", price: 800, pictureUrl: require("../assets/TheWitcher3.jpg")},
-                        {id: 4, title: "Minecraft", price: 2200, pictureUrl: require("../assets/Minecraft.jpg")}, 
-                        {id: 5, title: "The Witcher 3", price: 800, pictureUrl: require("../assets/TheWitcher3.jpg")},
-                        {id: 6, title: "Elden Ring", price: 7000, pictureUrl: require("../assets/EldenRing.jpg")}
-                    ];
-                    setItems(data);
+                    fetch("../data.json").then(response => response.json()).then(res => {
+                        if(category != undefined){
+                            setItems((res.filter(g => g.category == category)));
+                        } else{
+                            setItems(res);
+                        }
+                    });
                 }, 2000)
             );
         }
-
-        fetchData().catch(console.error);;
-    }, []);
+        fetchData().catch(console.error);
+    }, [category]);
 
     return(
         <Box display={"flex"} flexWrap={"wrap"}>

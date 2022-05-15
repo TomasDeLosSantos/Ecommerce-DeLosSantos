@@ -7,3 +7,7 @@
     transform: scale(1.05);
     cursor: pointer;
 }
+.active > button{
+    color: white;
+    background-color: teal;
+}

@@ -3,10 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
-const ItemCount = ({title, stock, initial, onAdd, price}) => {
+const ItemCount = ({title, stock, initial, price}) => {
     const [quant, setQuant] = useState(initial);
     const [curStock, setStock] = useState(stock);
     let delDisabled, addDisabled;
+
+    const onAdd = (quant, title) => {
+        alert(quant + " " + title + " added to cart");
+    } 
 
     quant == 0 ? delDisabled = true : delDisabled = false;
     quant == curStock ? addDisabled = true : addDisabled = false;
@@ -36,9 +40,9 @@ const ItemCount = ({title, stock, initial, onAdd, price}) => {
                 </Heading>
             </Box>
 
-            <Box display={"flex"} alignContent={"center"} justifyContent={"center"} margin={"0.5rem auto"}>
+            <Box display={"flex"} alignContent={"center"} justifyContent={"space-between"} >
 
-                <Button variant={"ghost"} color={"teal"} margin={"auto 2rem"} isDisabled={delDisabled} onClick={() => quant > 0 ? setQuant(quant - 1) : quant = 0}>
+                <Button variant={"ghost"} color={"teal"}  isDisabled={delDisabled} onClick={() => quant > 0 ? setQuant(quant - 1) : quant = 0}>
                     <FontAwesomeIcon icon={faMinus}/>
                 </Button>
 
@@ -46,12 +50,12 @@ const ItemCount = ({title, stock, initial, onAdd, price}) => {
                     {quant}
                 </Heading>
 
-                <Button variant={"ghost"} color={"teal"} margin={"auto 2rem"} isDisabled={addDisabled} onClick={() => quant < curStock ? setQuant(quant + 1) : quant = curStock}>
+                <Button variant={"ghost"} color={"teal"} mr={"1rem"} isDisabled={addDisabled} onClick={() => quant < curStock ? setQuant(quant + 1) : quant = curStock}>
                     <FontAwesomeIcon icon={faPlus}/>
                 </Button>
 
+                <Button variant={"solid"} colorScheme={"teal"} width={"50%"} isDisabled={!quant>0} onClick={addToCart}>Add to cart</Button>
             </Box>
-            <Button variant={"solid"} colorScheme={"teal"} width={"100%"} onClick={addToCart}>Add to cart</Button>
         </Box>
     );
 }

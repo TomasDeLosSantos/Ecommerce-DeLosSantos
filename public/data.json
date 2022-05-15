@@ -1,8 +1,8 @@
 [
-    {"id": 1, "title": "Elden Ring", "price": 7000, "pictureUrl": "../assets/TheWitcher3.jpg"}, 
-    {"id": 2, "title": "TheWitcher3", "price": 2200, "pictureUrl": "../assets/TheWitcher3.jpg"}, 
-    {"id": 3, "title": "The Witcher 3", "price": 800, "pictureUrl": "../assets/TheWitcher3.jpg"},
-    {"id": 4, "title": "TheWitcher3", "price": 2200, "pictureUrl": "../assets/TheWitcher3.jpg"}, 
-    {"id": 5, "title": "The Witcher 3", "price": 800, "pictureUrl": "../assets/TheWitcher3.jpg"},
-    {"id": 6, "title": "Elden Ring", "price": 7000, "pictureUrl": "../assets/TheWitcher3.jpg"}
+    {"id": 1, "title": "Elden Ring", "price": 7000, "category": "ps4", "pictureUrl": "../assets/EldenRing.jpg", "stock": 1 , "description": "Elden Ring is an open world Soul's game. FromSoftware's formula taken to the next level."}, 
+    {"id": 2, "title": "Minecraft", "price": 2200, "category": "pc", "pictureUrl": "../assets/Minecraft.jpg", "stock":  3, "description": "The ultimate sandbox game. Explore, gather, craft, build and fight. Create your own adventure."}, 
+    {"id": 3, "title": "The Witcher 3", "price": 1000, "category": "ps4", "pictureUrl": "../assets/TheWitcher3.jpg", "stock":  8, "description": "The Witcher 3: Wild Hunt is the new RPG by which all other RPGs should be judged."},
+    {"id": 4, "title": "Mass Effect: LE", "price": 5000, "category": "xbox", "pictureUrl": "../assets/MassEffectLE.jpg", "stock":  10, "description": "Originally released from 2007 to 2012, the Mass Effect trilogy is arguably BioWare's magnum opus."},
+    {"id": 5, "title": "Fallout New Vegas", "price": 500, "category": "xbox", "pictureUrl": "../assets/FalloutNV.jpg", "stock":  7, "description": "In New Vegas, the fun Fallout 3 formula is intact, with more polished combat, high-quality side missions, and the exciting setting of the Vegas strip."},
+    {"id": 6, "title": "Firewatch", "price": 800, "category": "pc", "pictureUrl": "../assets/Firewatch.jpg", "stock":  2, "description": "Firewatch is about solitude and space, a first-person journey through the massive wilderness of America’s Shoshone National Forest."}
 ]

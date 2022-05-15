@@ -4,12 +4,16 @@ import { faMagnifyingGlass, faGamepad, faComputerMouse, faCartShopping } from '@
 import { faPlaystation, faXbox } from '@fortawesome/free-brands-svg-icons'
 import "../styles/nav.css"
 import CartWidget from './CartWidget'
+import { NavLink } from 'react-router-dom'
+
 
 const NavBar = () => {
     return(
         <header>
             <nav>
-                <Heading textAlign={"center"} letterSpacing={"0.3rem"} fontWeight={"700"} size={"lg"} color={"teal"}>goat.codes</Heading>
+                <NavLink to={"/"}>
+                    <Heading textAlign={"center"} letterSpacing={"0.3rem"} fontWeight={"700"} size={"lg"} color={"teal"}>goat.codes</Heading>
+                </NavLink>
                 <Box display={"flex"} flexDir={"column"} w={"40%"}>
                     <InputGroup>
                         <InputLeftElement 
@@ -25,10 +29,26 @@ const NavBar = () => {
                     </InputGroup>
 
                     <ul className="nav__menu">
-                        <li><Button mt={"0.5rem"} leftIcon={<FontAwesomeIcon icon={faGamepad}/>} colorScheme="teal" variant={"ghost"}>ALL</Button></li>
-                        <li><Button mt={"0.5rem"} leftIcon={<FontAwesomeIcon icon={faComputerMouse}/>} colorScheme="teal" variant={"ghost"}>PC</Button></li>
-                        <li><Button mt={"0.5rem"} leftIcon={<FontAwesomeIcon icon={faPlaystation}/>} colorScheme="teal" variant={"ghost"}>PS4</Button></li>
-                        <li><Button mt={"0.5rem"} leftIcon={<FontAwesomeIcon icon={faXbox}/>} colorScheme="teal" variant={"ghost"}>XBOX</Button></li>
+                        <li>
+                            <NavLink className={"navlink"} activeclassname={"active"} to={"/"}>
+                                <Button mt={"0.5rem"} leftIcon={<FontAwesomeIcon icon={faGamepad}/>} colorScheme="teal" variant={"ghost"}>ALL</Button>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={"navlink"} activeclassname={"active"} to={"/category/pc"}>
+                                <Button mt={"0.5rem"} leftIcon={<FontAwesomeIcon icon={faComputerMouse}/>} colorScheme="teal" variant={"ghost"}>PC</Button>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={"navlink"} activeclassname={"active"} to={"/category/ps4"}>
+                                <Button mt={"0.5rem"} leftIcon={<FontAwesomeIcon icon={faPlaystation}/>} colorScheme="teal" variant={"ghost"}>PS4</Button>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={"navlink"} activeclassname={"active"} to={"/category/xbox"}>
+                                <Button mt={"0.5rem"} leftIcon={<FontAwesomeIcon icon={faXbox}/>} colorScheme="teal" variant={"ghost"}>XBOX</Button>
+                            </NavLink>
+                        </li>
                     </ul>
 
                 </Box>

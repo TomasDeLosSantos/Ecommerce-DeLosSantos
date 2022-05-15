@@ -2,6 +2,7 @@ import { Heading, Button, ButtonGroup, Input, InputGroup, InputLeftElement, Badg
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Item = ({id, title, price, pictureUrl}) => {
 
@@ -18,7 +19,9 @@ const Item = ({id, title, price, pictureUrl}) => {
                 minWidth={"300px"}
                 position={"relative"}>
                     
-            <img className='img hover' src={pictureUrl}/>
+            <Link to={`/game/${id}`}>
+                <img className='img hover' src={pictureUrl}/>
+            </Link>
 
             <Box display={"flex"} alignContent={"center"} justifyContent={"space-between"} mt={"0.5rem"} mb={"0.5rem"}>
 
