@@ -1,4 +1,4 @@
-import { Heading, Button, ButtonGroup, Input, InputGroup, InputLeftElement, Badge, Box } from '@chakra-ui/react'
+import { Heading, Button, Badge, Box } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
@@ -30,8 +30,6 @@ const ItemCount = ({title, stock, initial, price}) => {
                 borderRadius={"10px"} 
                 padding={"0.5rem"}
                 margin={"1rem"}>
-                    
-            {/* <Heading size={"md"} color={"teal"} textAlign={"center"} mb={"0.5rem"}>{title}</Heading> */}
 
             <Box display={"flex"} alignContent={"start"} justifyContent={"space-between"}> 
                 <Badge size={"md"} colorScheme={"blue"} width={"-webkit-fit-content"} margin={"auto 0px"}>{curStock} units left</Badge>

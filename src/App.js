@@ -1,5 +1,5 @@
 // UTILITIES;
-import { ChakraProvider, extendTheme, SliderFilledTrack } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // STYLES
@@ -18,7 +18,7 @@ const theme = extendTheme({
     heading: "Archivo, sans-serif",
     body: "Archivo, sans-serif"
   }
-})
+});
 
 function App() {
   return (

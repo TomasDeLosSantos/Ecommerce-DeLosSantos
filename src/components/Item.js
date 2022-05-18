@@ -1,7 +1,4 @@
-import { Heading, Button, ButtonGroup, Input, InputGroup, InputLeftElement, Badge, Box } from '@chakra-ui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import { Heading, Badge, Box } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 const Item = ({id, title, price, pictureUrl}) => {

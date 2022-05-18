@@ -1,6 +1,6 @@
-import { Heading, Button, ButtonGroup, Input, InputGroup, InputLeftElement, Badge, Box } from '@chakra-ui/react'
+import { Heading, Button, Input, InputGroup, InputLeftElement, Box } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faGamepad, faComputerMouse, faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faGamepad, faComputerMouse } from '@fortawesome/free-solid-svg-icons'
 import { faPlaystation, faXbox } from '@fortawesome/free-brands-svg-icons'
 import "../styles/nav.css"
 import CartWidget from './CartWidget'

@@ -1,5 +1,4 @@
-import { Heading, Button, ButtonGroup, Input, InputGroup, InputLeftElement, Badge, Box } from '@chakra-ui/react'
-import ItemCount from './ItemCount';
+import { Heading, Box } from '@chakra-ui/react'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 

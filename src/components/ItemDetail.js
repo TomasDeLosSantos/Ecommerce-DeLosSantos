@@ -1,4 +1,4 @@
-import { Heading, Button, Text, ButtonGroup, Input, InputGroup, InputLeftElement, Badge, Box } from '@chakra-ui/react'
+import { Heading, Text, Box } from '@chakra-ui/react'
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({item = []}) => {
