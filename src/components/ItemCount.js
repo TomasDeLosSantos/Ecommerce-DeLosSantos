@@ -1,26 +1,16 @@
-import { Heading, Button, Badge, Box } from '@chakra-ui/react'
+import { Heading, Button, Badge, Box, useToast } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
-const ItemCount = ({title, stock, initial, price}) => {
+const ItemCount = ({title, stock, initial, price, onAdd}) => {
     const [quant, setQuant] = useState(initial);
     const [curStock, setStock] = useState(stock);
     let delDisabled, addDisabled;
-
-    const onAdd = (quant, title) => {
-        alert(quant + " " + title + " added to cart");
-    } 
+    const toast = useToast()
 
     quant == 0 ? delDisabled = true : delDisabled = false;
     quant == curStock ? addDisabled = true : addDisabled = false;
-
-    const addToCart = () =>{
-        onAdd(quant, title);
-        setStock(curStock - quant);
-        setQuant(0);
-    }
-
 
     return(
         <Box    display={"flex"} 
@@ -52,7 +42,21 @@ const ItemCount = ({title, stock, initial, price}) => {
                     <FontAwesomeIcon icon={faPlus}/>
                 </Button>
 
-                <Button variant={"solid"} colorScheme={"teal"} width={"50%"} isDisabled={!quant>0} onClick={addToCart}>Add to cart</Button>
+                <Button variant={"solid"} colorScheme={"teal"} width={"50%"} isDisabled={!quant>0} onClick={() => {
+                    onAdd(quant);
+                    setStock(curStock - quant);
+                    setQuant(0);
+                    toast({
+                        title: title,
+                        description: `${quant} added to cart`,
+                        status: 'success',
+                        duration: 3000,
+                        isClosable: true,
+                        position: "bottom-right"
+                      });
+                }}>
+                    Add to cart
+                </Button>
             </Box>
         </Box>
     );

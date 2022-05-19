@@ -1,7 +1,10 @@
-import { Heading, Text, Box } from '@chakra-ui/react'
+import { Heading, Text, Box, useToast } from '@chakra-ui/react'
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({item = []}) => {
+    const onAdd = (quant) => {
+        console.log(`${quant} ${item.title} added to cart`)
+    } 
     return(
         <Box display={"flex"} justifyContent={"space-between"} alignContent={"center"} width={"100%"}>
             <img className='img' width={"50%"} src={item.pictureUrl}/>
@@ -24,7 +27,7 @@ const ItemDetail = ({item = []}) => {
                     {item.description}
                 </Text>
                 
-                <ItemCount title={item.title} stock={item.stock} initial={item.stock > 0 ? 1 : 0} price={item.price}></ItemCount>
+                <ItemCount title={item.title} stock={item.stock} initial={item.stock > 0 ? 1 : 0} price={item.price} onAdd={onAdd}></ItemCount>
         </Box>
         </Box>
     );

@@ -2,8 +2,6 @@ import { Heading, Badge, Box } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 const Item = ({id, title, price, pictureUrl}) => {
-
-
     return(
         <Box    display={"flex"} 
                 flexDir={"column"} 
@@ -30,10 +28,7 @@ const Item = ({id, title, price, pictureUrl}) => {
                 <Heading size={"md"} color={"teal"}>
                     {"$" + price}
                 </Heading>
-
-
             </Box>
-            {/* <Button variant={"solid"} colorScheme={"teal"} width={"100%"}>Details</Button> */}
         </Box>
     );
 }

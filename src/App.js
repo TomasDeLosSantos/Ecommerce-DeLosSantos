@@ -10,7 +10,7 @@ import "./styles/style.css"
 import NavBar from "./components/NavBar"
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
-
+import Cart from './components/Cart';
 // VIEWS
 
 const theme = extendTheme({
@@ -30,6 +30,7 @@ function App() {
             <Route path='/' element={<ItemListContainer greeting="all games."/>}/>
             <Route path='/game/:id' element={<ItemDetailContainer></ItemDetailContainer>}/>
             <Route path='/category/:category' element={<ItemListContainer></ItemListContainer>}/>
+            <Route path='/cart' element={<Cart></Cart>}/>
           </Routes>
         </div>
       </Router>
