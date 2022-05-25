@@ -11,6 +11,8 @@ import NavBar from "./components/NavBar"
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
+import CartContext from './components/CartContext';
+
 // VIEWS
 
 const theme = extendTheme({
@@ -25,13 +27,15 @@ function App() {
     <ChakraProvider theme={theme}>
       <Router>
         <div className="App">
-          <NavBar/>
-          <Routes>
-            <Route path='/' element={<ItemListContainer greeting="all games."/>}/>
-            <Route path='/game/:id' element={<ItemDetailContainer></ItemDetailContainer>}/>
-            <Route path='/category/:category' element={<ItemListContainer></ItemListContainer>}/>
-            <Route path='/cart' element={<Cart></Cart>}/>
-          </Routes>
+          <CartContext>
+            <NavBar/>
+            <Routes>
+                <Route path='/' element={<ItemListContainer greeting="all games."/>}/>
+                <Route path='/game/:id' element={<ItemDetailContainer></ItemDetailContainer>}/>
+                <Route path='/category/:category' element={<ItemListContainer></ItemListContainer>}/>
+                <Route path='/cart' element={<Cart></Cart>}/>
+            </Routes>
+          </CartContext>
         </div>
       </Router>
     </ChakraProvider>

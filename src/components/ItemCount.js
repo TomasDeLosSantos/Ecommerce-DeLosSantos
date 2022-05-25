@@ -4,13 +4,13 @@ import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
 const ItemCount = ({title, stock, initial, price, onAdd}) => {
-    const [quant, setQuant] = useState(initial);
+    let [quant, setQuant] = useState(initial);
     const [curStock, setStock] = useState(stock);
     let delDisabled, addDisabled;
     const toast = useToast()
 
-    quant == 0 ? delDisabled = true : delDisabled = false;
-    quant == curStock ? addDisabled = true : addDisabled = false;
+    quant === 0 ? delDisabled = true : delDisabled = false;
+    quant === curStock ? addDisabled = true : addDisabled = false;
 
     return(
         <Box    display={"flex"} 

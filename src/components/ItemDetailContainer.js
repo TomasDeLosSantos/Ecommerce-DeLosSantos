@@ -10,11 +10,9 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const fetchData = async () => {
             return new Promise(() => setTimeout(() => {
-
                 fetch("../data.json").then(response => response.json()).then(res => {
                     setItems(res);
                 });
-
             }, 2000)
             );
         }
