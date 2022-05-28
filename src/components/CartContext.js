@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const Context = React.createContext([]);
 
@@ -26,7 +26,7 @@ const CartContext = ({ defaultValue = [], children }) => {
     }
 
     const removeItem = (itemId) =>{
-        setCart(cart.filter(i => i.item.id === itemId));
+        setCart(cart.filter(i => i.item.id !== itemId));
     }
 
     const clear = () =>{
