@@ -1,5 +1,6 @@
 import { Box, Heading, Button } from "@chakra-ui/react";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { Context } from "./CartContext";
 import CartItem from "./CartiItem";
 const Cart = () => {
@@ -13,13 +14,6 @@ const Cart = () => {
                     {"TOTAL: $" + cart.cart.reduce((a,b) => a + (b.item.price * b.quant), 0)}
                     <Button ml={"1rem"} variant={"solid"} colorScheme={"blue"} size={"lg"} isDisabled={cart.cart.length <= 0}>BUY</Button>
                 </Heading>
-                {/* <Button variant={"solid"} colorScheme={"blue"}>Buy Cart</Button> */}
-                {/* <Box className="checkout" width={"100%"}>
-                    <Heading>Items In Cart:</Heading>
-                    <Heading>{cart.cart.reduce((a,b) => a + b.quant, 0)}</Heading>
-                    <Heading>Total: {cart.cart.reduce((a,b) => a + (b.item.price * b.quant), 0)}</Heading>
-                    <Button>BUY</Button>
-                </Box> */}
 
             </Box>
             <Box display={"flex"} flexWrap={"wrap"}>
@@ -27,10 +21,14 @@ const Cart = () => {
                     ? 
                     cart.cart.map(i => <CartItem key={i.item.id} game={i.item} quant={i.quant}></CartItem>) 
                     : 
-                    <Button variant={"solid"} colorScheme={"blue"} margin={"auto"} size={"lg"}>Explore our catalog</Button>
+                    <NavLink to={"/"} className={"center"}>
+                        <Button variant={"solid"} colorScheme={"blue"} margin={"auto"} size={"lg"}>Explore our catalog</Button>
+                    </NavLink>
                 }
             </Box>
         </Box>
+
+        
     );
 }
 

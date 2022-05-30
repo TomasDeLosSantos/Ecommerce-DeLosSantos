@@ -8,16 +8,9 @@ const ItemDetailContainer = () => {
     let id = useParams().id;
 
     useEffect(() => {
-        const fetchData = async () => {
-            return new Promise(() => setTimeout(() => {
-                fetch("../data.json").then(response => response.json()).then(res => {
-                    setItems(res);
-                });
-            }, 2000)
-            );
-        }
-
-        fetchData().catch(console.error);
+        fetch("../data.json").then(response => response.json()).then(res => {
+            setItems(res);
+        });
 
     }, []);
 

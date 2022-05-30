@@ -9,19 +9,13 @@ const ItemList = ({category}) => {
 
     useEffect(() => {
         setItems([]);
-        const fetchData = async () => {
-            return new Promise(() => setTimeout(() => {
-                    fetch("../data.json").then(response => response.json()).then(res => {
-                        if(category != undefined){
-                            setItems((res.filter(g => g.category == category)));
-                        } else{
-                            setItems(res);
-                        }
-                    });
-                }, 2000)
-            );
-        }
-        fetchData().catch(console.error);
+        fetch("../data.json").then(response => response.json()).then(res => {
+            if(category != undefined){
+                setItems((res.filter(g => g.category == category)));
+            } else{
+                setItems(res);
+            }
+        });
     }, [category]);
 
     return(
