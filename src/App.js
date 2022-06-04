@@ -15,6 +15,7 @@ import CartContext from './components/CartContext';
 
 // VIEWS
 
+
 const theme = extendTheme({
   fonts: {
     heading: "Archivo, sans-serif",

@@ -1,10 +1,13 @@
 import { Heading, Badge, Box } from '@chakra-ui/react'
+import { useState } from 'react';
 import { Link } from 'react-router-dom'
 
 const Item = ({id, title, price, pictureUrl}) => {
+    let [loaded, setLoaded] = useState(false);
+
     return(
         <Box    display={"flex"} 
-                flexDir={"column"} 
+        flexDir={"column"} 
                 alignContent={"center"} 
                 justifyContent={"center"} 
                 borderRadius={"10px"} 
@@ -15,9 +18,10 @@ const Item = ({id, title, price, pictureUrl}) => {
                 position={"relative"}>
                     
             <Link to={`/game/${id}`}>
-                <img className='img hover' src={pictureUrl}/>
+                <img className='img hover' src={pictureUrl} onLoad={() => setLoaded(true)}/>
             </Link>
 
+            {loaded ? (
             <Box display={"flex"} alignContent={"center"} justifyContent={"space-between"} mt={"0.5rem"} mb={"0.5rem"}>
 
                 <Heading size={"md"} color={"teal"} textAlign={"center"} mb={"0.5rem"}>
@@ -28,7 +32,7 @@ const Item = ({id, title, price, pictureUrl}) => {
                 <Heading size={"md"} color={"teal"}>
                     {"$" + price}
                 </Heading>
-            </Box>
+            </Box>) : null}
         </Box>
     );
 }
