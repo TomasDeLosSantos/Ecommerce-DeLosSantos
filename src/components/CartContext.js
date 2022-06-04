@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export const Context = React.createContext([]);
 
@@ -22,10 +22,10 @@ const CartContext = ({ defaultValue = [], children }) => {
         // console.log(cart[itemId])
         // console.log(itemId)
         // console.log()
-        cart[cart.findIndex(g => g.item.id == itemId)].quant == 1 ? (
+        cart[cart.findIndex(g => g.item.id === itemId)].quant === 1 ? (
             setCart(cart.filter(i => i.item.id !== itemId))
         ) : (
-            setCart(cart.map(g => g.item.id == itemId ? { ...g, quant: g.quant - 1 } : g))
+            setCart(cart.map(g => g.item.id === itemId ? { ...g, quant: g.quant - 1 } : g))
         )
     }
 

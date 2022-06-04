@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({greeting}) =>{
     let category = useParams().category;
-    if(greeting == undefined){
+    if(greeting === undefined){
         greeting = category + " games";
     }
     return (

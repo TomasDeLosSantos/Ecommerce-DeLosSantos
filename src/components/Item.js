@@ -1,38 +1,38 @@
-import { Heading, Badge, Box } from '@chakra-ui/react'
+import { Heading, Box } from '@chakra-ui/react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-const Item = ({id, title, price, pictureUrl}) => {
+const Item = ({ id, title, price, pictureUrl }) => {
     let [loaded, setLoaded] = useState(false);
 
-    return(
-        <Box    display={"flex"} 
-        flexDir={"column"} 
-                alignContent={"center"} 
-                justifyContent={"center"} 
-                borderRadius={"10px"} 
-                padding={"0.5rem"}
-                margin={"1rem"}
-                width={"30%"}
-                minWidth={"300px"}
-                position={"relative"}>
-                    
+    return (
+        <Box display={"flex"}
+            flexDir={"column"}
+            alignContent={"center"}
+            justifyContent={"center"}
+            borderRadius={"10px"}
+            padding={"0.5rem"}
+            margin={"1rem"}
+            width={"30%"}
+            minWidth={"300px"}
+            position={"relative"}>
+
             <Link to={`/game/${id}`}>
-                <img className='img hover' src={pictureUrl} onLoad={() => setLoaded(true)}/>
+                <img className='img hover' src={pictureUrl} onLoad={() => setLoaded(true)} />
             </Link>
 
             {loaded ? (
-            <Box display={"flex"} alignContent={"center"} justifyContent={"space-between"} mt={"0.5rem"} mb={"0.5rem"}>
+                <Box display={"flex"} alignContent={"center"} justifyContent={"space-between"} mt={"0.5rem"} mb={"0.5rem"}>
 
-                <Heading size={"md"} color={"teal"} textAlign={"center"} mb={"0.5rem"}>
-                    {title + "  "}
-                    <Badge size={"md"} colorScheme={"blue"} width={"-webkit-fit-content"} margin={"auto"}>ID: {id}</Badge>
-                </Heading>
+                    <Heading size={"md"} color={"teal"} textAlign={"center"} mb={"0.5rem"}>
+                        {title + "  "}
+                        {/* <Badge size={"md"} colorScheme={"blue"} width={"-webkit-fit-content"} margin={"auto"}>ID: {id}</Badge> */}
+                    </Heading>
 
-                <Heading size={"md"} color={"teal"}>
-                    {"$" + price}
-                </Heading>
-            </Box>) : null}
+                    <Heading size={"md"} color={"teal"}>
+                        {"$" + price}
+                    </Heading>
+                </Box>) : null}
         </Box>
     );
 }

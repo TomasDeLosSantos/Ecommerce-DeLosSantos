@@ -1,4 +1,4 @@
-import { Box, Link, Heading, Badge, IconButton } from "@chakra-ui/react";
+import { Box, Heading, Badge } from "@chakra-ui/react";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Context } from "./CartContext";

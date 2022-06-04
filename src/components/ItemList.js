@@ -15,27 +15,19 @@ const ItemList = ({category}) => {
         category ? g = query(gamesCollection, orderBy("id"), where("category", "==", category)) : g = query(gamesCollection, orderBy("id"));
         
         getDocs(g).then((snapshot) => {
-            if(snapshot.size == 0){
+            if(snapshot.size === 0){
                 console.log("no results");
             }
             setItems(snapshot.docs);
-        })
-
-        // setItems([]);
-        // fetch("../data.json").then(response => response.json()).then(res => {
-        //     if(category != undefined){
-        //         setItems((res.filter(g => g.category == category)));
-        //     } else{
-        //         setItems(res);
-        //     }
-        // });
+        });
+        
     }, [category]);
 
 
 
     return(
         <Box display={"flex"} flexWrap={"wrap"}>
-            {items.length > 0 ? (items.map(game => <Item key={game.data().id} id={game.data().id} title={game.data().title} price={game.data().price} pictureUrl={game.data().pictureUrl}></Item>)) : <Spinner m={"2rem auto"} size={"lg"} thickness={"4px"} color={"teal"}></Spinner>}
+            {items.length > 0 ? (items.map(game => <Item key={game.data().id} id={game.id} title={game.data().title} price={game.data().price} pictureUrl={game.data().pictureUrl}></Item>)) : <Spinner m={"2rem auto"} size={"lg"} thickness={"4px"} color={"teal"}></Spinner>}
         </Box>
     );
 
