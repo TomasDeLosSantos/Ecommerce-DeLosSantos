@@ -1,9 +1,11 @@
-import { Heading, Text, Box} from '@chakra-ui/react'
+import { Heading, Text, Box, useColorMode} from '@chakra-ui/react'
 import ItemCount from './ItemCount';
 import { useContext } from 'react';
 import { Context } from './CartContext';
 
 const ItemDetail = ({item = []}) => {
+    const { colorMode } = useColorMode();
+    
     const cart = useContext(Context);
 
     const onAdd = (quant) => {
@@ -24,7 +26,7 @@ const ItemDetail = ({item = []}) => {
                     width={"40%"}>
                     
 
-                <Heading size={"lg"} color={"teal"} textAlign={"center"} mb={"0.5rem"}>
+                <Heading size={"lg"} color={colorMode === 'light' ? 'teal' : 'teal.300'} textAlign={"center"} mb={"0.5rem"}>
                     {item.title + "  "}
                 </Heading>
 

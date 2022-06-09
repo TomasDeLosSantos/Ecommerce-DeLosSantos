@@ -57,6 +57,12 @@
     border-radius: 15px;
 }
 
+.checkoutDark{
+    background-color: #282d38;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
 .center{
     margin: auto;
 }
@@ -64,3 +70,7 @@
 .span{
     color: #000;
 }
+.spanDark{
+    color: #fff;
+}
+

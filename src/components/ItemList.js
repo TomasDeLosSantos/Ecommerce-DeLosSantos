@@ -24,7 +24,6 @@ const ItemList = ({category}) => {
     }, [category]);
 
 
-
     return(
         <Box display={"flex"} flexWrap={"wrap"}>
             {items.length > 0 ? (items.map(game => <Item key={game.data().id} id={game.id} title={game.data().title} price={game.data().price} pictureUrl={game.data().pictureUrl}></Item>)) : <Spinner m={"2rem auto"} size={"lg"} thickness={"4px"} color={"teal"}></Spinner>}

@@ -13,13 +13,14 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
 import CartContext from './components/CartContext';
 
-// VIEWS
-
-
 const theme = extendTheme({
   fonts: {
     heading: "Archivo, sans-serif",
     body: "Archivo, sans-serif"
+  },
+  config: {
+    initialColorMode: 'light',
+    useSystemColorMode: false
   }
 });
 

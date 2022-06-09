@@ -1,10 +1,11 @@
-import { Box, Heading, Badge } from "@chakra-ui/react";
+import { Box, Heading, Badge, useColorMode } from "@chakra-ui/react";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Context } from "./CartContext";
 import { useContext } from "react";
 
 const CartItem = ({game, quant}) => {
+    const { colorMode } = useColorMode();
     const {id, pictureUrl, price, title} = game;
 
     const cart = useContext(Context);
@@ -31,12 +32,12 @@ const CartItem = ({game, quant}) => {
 
             <Box display={"flex"} alignContent={"center"} justifyContent={"space-between"} mt={"0.5rem"} mb={"0.5rem"}>
 
-                <Heading size={"md"} color={"teal"} textAlign={"center"} mb={"0.5rem"}>
+                <Heading size={"md"} color={colorMode === 'light' ? 'teal' : 'teal.300'} textAlign={"center"} mb={"0.5rem"}>
                     {title + "  "}
                     <Badge size={"md"} colorScheme={"blue"} width={"-webkit-fit-content"} margin={"auto"}>{quant + " units"}</Badge>
                 </Heading>
 
-                <Heading size={"md"} color={"teal"}>
+                <Heading size={"md"} color={colorMode === 'light' ? 'teal' : 'teal.300'}>
                     {"$" + price}
                 </Heading>
             </Box>

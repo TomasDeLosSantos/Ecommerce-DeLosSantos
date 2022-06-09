@@ -1,9 +1,10 @@
-import { Heading, Button, Badge, Box, useToast } from '@chakra-ui/react'
+import { Heading, Button, Badge, Box, useToast, useColorMode } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
 const ItemCount = ({title, stock, initial, price, onAdd}) => {
+    const { colorMode } = useColorMode();
     let [quant, setQuant] = useState(initial);
     const [curStock, setStock] = useState(stock);
     let delDisabled, addDisabled;
@@ -23,7 +24,7 @@ const ItemCount = ({title, stock, initial, price, onAdd}) => {
 
             <Box display={"flex"} alignContent={"start"} justifyContent={"space-between"}> 
                 <Badge size={"md"} colorScheme={"blue"} width={"-webkit-fit-content"} margin={"auto 0px"}>{curStock} units left</Badge>
-                <Heading textAlign={"center"} size={"lg"} color={"teal"}>
+                <Heading textAlign={"center"} size={"lg"} color={colorMode === 'light' ? 'teal' : 'teal.300'}>
                     {"$" + price} 
                 </Heading>
             </Box>
@@ -34,7 +35,7 @@ const ItemCount = ({title, stock, initial, price, onAdd}) => {
                     <FontAwesomeIcon icon={faMinus}/>
                 </Button>
 
-                <Heading margin={"auto"} size={"sm"} color={"teal"} >
+                <Heading margin={"auto"} size={"sm"} color={colorMode === 'light' ? 'teal' : 'teal.300'}>
                     {quant}
                 </Heading>
 

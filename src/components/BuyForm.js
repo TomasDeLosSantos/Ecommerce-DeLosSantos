@@ -9,6 +9,7 @@ import {
     FormControl,
     Input,
     Button,
+    useColorMode
 } from '@chakra-ui/react'
 import { collection, addDoc, getFirestore } from "firebase/firestore" 
 import { Context } from "./CartContext";
@@ -16,6 +17,7 @@ import { Context } from "./CartContext";
 
 
 const BuyForm = ({cart, total}) => {
+    const { colorMode } = useColorMode();
     const [ticket, setTicket] = useState({buyer: {}, items: [], total: total});
     const [buyer, setBuyer] = useState({});
     const [purchaseID, setPurchaseID] = useState("");
@@ -40,6 +42,7 @@ const BuyForm = ({cart, total}) => {
     const {
         handleSubmit,
         register,
+        reset,
         formState: { errors, isSubmitting },
     } = useForm()
 
@@ -50,16 +53,17 @@ const BuyForm = ({cart, total}) => {
 		});
         setPurchaseID(docRef.id);
         cartCont.clear();
+        reset();
     }
 
     return (
         <Box padding={"2rem"}>
-            <Heading color={"teal"}>BUY CHECKOUT</Heading>
+            <Heading color={colorMode === 'light' ? 'teal' : 'teal.300'}>BUY CHECKOUT</Heading>
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* NAME INPUT */}
                 <FormControl onChange={handleOnChange} isInvalid={errors.name} padding={"1rem 0rem"}>
-                    <FormLabel color={"teal"} htmlFor='name'>NAME</FormLabel>
+                    <FormLabel color={colorMode === 'light' ? 'teal' : 'teal.300'} htmlFor='name'>NAME</FormLabel>
                     <Input
                         id='name'
                         placeholder='name'
@@ -69,7 +73,7 @@ const BuyForm = ({cart, total}) => {
                         })}
                         variant={"filled"} 
                         focusBorderColor={"teal.500"}
-                        _placeholder={{color: "teal", opacity: "0.7"}}
+                        _placeholder={{color: colorMode === 'light' ? 'teal' : 'teal.300', opacity: "0.7"}}
                     />
                     <FormErrorMessage>
                         {errors.name && errors.name.message}
@@ -78,7 +82,7 @@ const BuyForm = ({cart, total}) => {
                 
                 {/* PHONE INPUT */}
                 <FormControl onChange={handleOnChange} isInvalid={errors.phone} padding={"1rem 0rem"}>
-                    <FormLabel color={"teal"} htmlFor='name'>PHONE NUMBER</FormLabel>
+                    <FormLabel color={colorMode === 'light' ? 'teal' : 'teal.300'} htmlFor='name'>PHONE NUMBER</FormLabel>
                     <Input
                         id='phone'
                         placeholder='Phone Number'
@@ -90,7 +94,7 @@ const BuyForm = ({cart, total}) => {
                         
                         variant={"filled"} 
                         focusBorderColor={"teal.500"}
-                        _placeholder={{color: "teal", opacity: "0.7"}}
+                        _placeholder={{color: colorMode === 'light' ? 'teal' : 'teal.300', opacity: "0.7"}}
                     />
                     <FormErrorMessage>
                         {errors.phone && errors.phone.message}
@@ -99,7 +103,7 @@ const BuyForm = ({cart, total}) => {
 
                 {/* EMAIL INPUT */}
                 <FormControl onChange={handleOnChange} isInvalid={errors.email} padding={"1rem 0rem"}>
-                    <FormLabel color={"teal"} htmlFor='name'>EMAIL</FormLabel>
+                    <FormLabel color={colorMode === 'light' ? 'teal' : 'teal.300'} htmlFor='name'>EMAIL</FormLabel>
                     <Input
                         id='email'
                         placeholder='Email'
@@ -111,7 +115,7 @@ const BuyForm = ({cart, total}) => {
                         
                         variant={"filled"} 
                         focusBorderColor={"teal.500"}
-                        _placeholder={{color: "teal", opacity: "0.7"}}
+                        _placeholder={{color: colorMode === 'light' ? 'teal' : 'teal.300', opacity: "0.7"}}
                     />
                     <FormErrorMessage>
                         {errors.email && errors.email.message}
@@ -123,7 +127,7 @@ const BuyForm = ({cart, total}) => {
                         FINISH
                     </Button>
                     
-                    {purchaseID !== "" ? <Heading color={"teal"} size={"md"} padding={"1rem 0rem"} lineHeight={"1.8rem"}> Su ID de compra es: <span className={"span"}>{purchaseID}</span>  <br></br> Por favor, no pierda su comprobante. </Heading> : null}
+                    {purchaseID !== "" ? <Heading color={colorMode === 'light' ? 'teal' : 'teal.300'} size={"md"} padding={"1rem 0rem"} lineHeight={"1.8rem"}> Your purchase ID: <span className={colorMode === 'light' ? 'span' : 'spanDark'}>{purchaseID}</span>  <br></br> Please, save it carefully. <br></br> Thanks for shopping with us! </Heading> : null}
 
                 </Box>
             </form>

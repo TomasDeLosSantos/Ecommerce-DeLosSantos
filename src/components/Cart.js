@@ -7,7 +7,8 @@ import {
     ModalContent,
     ModalBody,
     ModalCloseButton,
-    useDisclosure
+    useDisclosure,
+    useColorMode
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
@@ -16,18 +17,19 @@ import CartItem from "./CartiItem";
 import BuyForm from "./BuyForm";
 
 const Cart = () => {
+    const { colorMode } = useColorMode();
     const cart = useContext(Context);
     const { isOpen, onOpen, onClose } = useDisclosure()
     // const finalRef = React.useRef(null)
 
     return (
-        <Box className="checkout" maxWidth={"1320px"} margin={"auto"} padding={"1rem"}>
+        <Box className={colorMode === "light" ? "checkout" : "checkoutDark"} maxWidth={"1320px"} margin={"auto"} padding={"1rem"}>
             <Box maxWidth={"1320px"} margin={"auto"} display={"flex"} justifyContent={"space-between"} alignContent={"center"} padding={"0.5rem"}>
-                <Heading color={"teal"}>
+                <Heading color={colorMode === 'light' ? 'teal' : 'teal.300'}>
                     YOUR CART
                     <Button colorScheme={"red"} variant={"solid"} size={"sm"} ml={"1rem"} onClick={cart.clear}>CLEAR</Button>    
                 </Heading>
-                <Heading color={"teal"}>
+                <Heading color={colorMode === 'light' ? 'teal' : 'teal.300'}>
                     {"TOTAL: $" + cart.cart.reduce((a, b) => a + (b.item.price * b.quant), 0)}
                     <Button ml={"1rem"} variant={"solid"} colorScheme={"blue"} size={"lg"} isDisabled={cart.cart.length <= 0} onClick={onOpen}>BUY</Button>
                 </Heading>
