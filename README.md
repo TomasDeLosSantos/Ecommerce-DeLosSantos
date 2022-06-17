@@ -1,72 +1,17 @@
-Proyecto: Ecommerce de Videojuegos
+# Proyecto Final: Ecommerce de Videojuegos
 
-# Getting Started with Create React App
+## Goat Codes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fué desarrollado con React y Firebase.
+Además, para el estilado de la web se incluyó la librería de componentes Chakra UI (https://chakra-ui.com/) e íconos de FontAwesome (https://fontawesome.com/).
 
-## Available Scripts
+### Proceso de compra
+El usuario puede acceder al catálogo de juegos, almacenados en la base ded datos de Firebase, y armar su carrito. Cada item tiene su vista de detalle (/game/:id) donde hay una descripción del juego y se puede elegir la cantidad a agregar a la compra. 
+Se puede filtrar por categorías (/category/:category), en este caso son las diferentes plataformas para las que la web ofrece sus juegos. 
+Desde la vista de carrito, siempre accesible desde su respectivo botón, se pueden sacar elementos del carrito, vaciarlo o finalizar la compra.
+En la vista de compra el usuario debe ingresar su nombre, número de telefono y email para poder finalizar la compra. Al ingresar los campos a validar, se genera la órden de compra. En la base de datos se almacena la compra realizada y se muestra al usuario el ID correspondiente a su ticket.
+Como funciones extra, la web cuenta con un selector de modo claro/oscuro siempre accesible desde el menú de navegación.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Deploy
+Puede accederse directamente a la web desde el link generado por el deploy a través de Vercel:
+https://goat-codes.vercel.app/
