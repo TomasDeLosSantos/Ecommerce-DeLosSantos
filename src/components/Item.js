@@ -1,8 +1,8 @@
-import { Heading, Box, useColorMode } from '@chakra-ui/react'
+import { Heading, Box, useColorMode, Badge } from '@chakra-ui/react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-const Item = ({ id, title, price, pictureUrl }) => {
+const Item = ({ id, title, price, pictureUrl, category }) => {
     const { colorMode } = useColorMode();
     let [loaded, setLoaded] = useState(false);
 
@@ -27,7 +27,7 @@ const Item = ({ id, title, price, pictureUrl }) => {
 
                     <Heading size={"md"} color={colorMode === 'light' ? 'teal' : 'teal.300'} textAlign={"center"} mb={"0.5rem"}>
                         {title + "  "}
-                        {/* <Badge size={"md"} colorScheme={"blue"} width={"-webkit-fit-content"} margin={"auto"}>ID: {id}</Badge> */}
+                        <Badge size={"md"} colorScheme={"blue"} width={"-webkit-fit-content"} margin={"auto"}>{category}</Badge>
                     </Heading>
 
                     <Heading size={"md"} color={colorMode === 'light' ? 'teal' : 'teal.300'}>

@@ -27,7 +27,7 @@ const Cart = () => {
             <Box maxWidth={"1320px"} margin={"auto"} display={"flex"} justifyContent={"space-between"} alignContent={"center"} padding={"0.5rem"}>
                 <Heading color={colorMode === 'light' ? 'teal' : 'teal.300'}>
                     YOUR CART
-                    <Button colorScheme={"red"} variant={"solid"} size={"sm"} ml={"1rem"} onClick={cart.clear}>CLEAR</Button>    
+                    <Button colorScheme={"red"} variant={"solid"} size={"sm"} ml={"1rem"} onClick={cart.clear}>CLEAR</Button>
                 </Heading>
                 <Heading color={colorMode === 'light' ? 'teal' : 'teal.300'}>
                     {"TOTAL: $" + cart.cart.reduce((a, b) => a + (b.item.price * b.quant), 0)}
@@ -55,7 +55,7 @@ const Cart = () => {
                     </ModalBody>
                 </ModalContent>
             </Modal>
-            
+
         </Box>
 
 

@@ -1,8 +1,7 @@
 import { Box, Spinner } from '@chakra-ui/react'
 import { useEffect, useState } from "react";
 import Item from "./Item";
-import { collection, getDocs, getFirestore, orderBy, query, where } from "firebase/firestore" 
-// const items = [{id: 1, title: "titulo", price: 0, pictureUrl: "url"}, {id: 2, title: "titulo", price: 0, pictureUrl: "url"}, {id: 3, title: "titulo", price: 0, pictureUrl: "url"}];
+import { collection, getDocs, getFirestore, orderBy, query, where } from "firebase/firestore"
 
 const ItemList = ({category}) => {
 
@@ -26,7 +25,7 @@ const ItemList = ({category}) => {
 
     return(
         <Box display={"flex"} flexWrap={"wrap"}>
-            {items.length > 0 ? (items.map(game => <Item key={game.data().id} id={game.id} title={game.data().title} price={game.data().price} pictureUrl={game.data().pictureUrl}></Item>)) : <Spinner m={"2rem auto"} size={"lg"} thickness={"4px"} color={"teal"}></Spinner>}
+            {items.length > 0 ? (items.map(game => <Item key={game.data().id} id={game.id} title={game.data().title} price={game.data().price} pictureUrl={game.data().pictureUrl} category={game.data().category}></Item>)) : <Spinner m={"2rem auto"} size={"lg"} thickness={"4px"} color={"teal"}></Spinner>}
         </Box>
     );
 
